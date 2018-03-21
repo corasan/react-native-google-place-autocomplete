@@ -26,8 +26,6 @@ class GooglePlaceAutocomplete extends Component {
         onPredictions: func,
         onResult: func,
         predictionsStyle: objectOf(any),
-        inputStyle: objectOf(any),
-        inputContainerStyle: objectOf(any)
     }
 
     static defaultProps = {
