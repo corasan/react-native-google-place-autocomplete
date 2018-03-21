@@ -69,8 +69,8 @@ class GooglePlaceAutocomplete extends Component {
                     onChangeText={this._handleChangeText}
                     debounce={this.props.debounce}
                     onChangeTextSettle={this._handleChangeTextSettle}
-                    inputStyle={this.props.inputStyle} />
-                    inputContainerStyle={this.props.inputContainerStyle}
+                    inputStyle={this.props.inputStyle}
+                    inputContainerStyle={this.props.inputContainerStyle} />
                 <Predictions
                     predictions={this.state.predictions}
                     onPressPrediction={this._handlePressPrediction}
