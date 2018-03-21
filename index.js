@@ -27,6 +27,7 @@ class GooglePlaceAutocomplete extends Component {
         onResult: func,
         predictionsStyle: objectOf(any),
         inputStyle: objectOf(any),
+        inputContainerStyle: objectOf(any)
     }
 
     static defaultProps = {
@@ -69,6 +70,7 @@ class GooglePlaceAutocomplete extends Component {
                     debounce={this.props.debounce}
                     onChangeTextSettle={this._handleChangeTextSettle}
                     inputStyle={this.props.inputStyle} />
+                    inputContainerStyle={this.props.inputContainerStyle}
                 <Predictions
                     predictions={this.state.predictions}
                     onPressPrediction={this._handlePressPrediction}
