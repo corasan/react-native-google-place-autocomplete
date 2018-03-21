@@ -20,12 +20,13 @@ class GooglePlaceAutocomplete extends Component {
         googleAPIKey: string,
         value: string,
         debounce: number,
-        style: object,
+        containerStyle: objectOf(any),
         placeholder: string,
         onChangeText: func,
         onPredictions: func,
         onResult: func,
-        predictionsStyle: objectOf(any)
+        predictionsStyle: objectOf(any),
+        inputStyle: objectOf(any),
     }
 
     static defaultProps = {
@@ -60,13 +61,14 @@ class GooglePlaceAutocomplete extends Component {
 
     render() {
         return (
-            <View style={[style.container, this.props.style]}>
+            <View style={[style.container, this.props.containerStyle]}>
                 <AutocompleteInput
                     value={this.state.value}
                     placeholder={this.props.placeholder}
                     onChangeText={this._handleChangeText}
                     debounce={this.props.debounce}
-                    onChangeTextSettle={this._handleChangeTextSettle} />
+                    onChangeTextSettle={this._handleChangeTextSettle}
+                    inputStyle={this.props.inputStyle} />
                 <Predictions
                     predictions={this.state.predictions}
                     onPressPrediction={this._handlePressPrediction}
