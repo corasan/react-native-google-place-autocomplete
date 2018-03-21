@@ -8,6 +8,8 @@ import {
     number,
     object,
     string,
+    objectOf,
+    any
 } from 'prop-types';
 import axios, { CancelToken } from 'axios';
 import AutocompleteInput from './lib/AutocompleteInput';
@@ -22,7 +24,8 @@ class GooglePlaceAutocomplete extends Component {
         placeholder: string,
         onChangeText: func,
         onPredictions: func,
-        onResult: func
+        onResult: func,
+        predictionsStyle: objectOf(any)
     }
 
     static defaultProps = {
@@ -66,7 +69,8 @@ class GooglePlaceAutocomplete extends Component {
                     onChangeTextSettle={this._handleChangeTextSettle} />
                 <Predictions
                     predictions={this.state.predictions}
-                    onPressPrediction={this._handlePressPrediction} />
+                    onPressPrediction={this._handlePressPrediction}
+                    predictionsStyle={this.props.predictionsStyle} />
             </View>
         );
     }
